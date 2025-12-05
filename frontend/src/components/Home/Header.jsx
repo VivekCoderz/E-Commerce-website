@@ -76,37 +76,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-
-      {/* Navigation */}
-      <nav className="border-t border-gray-200">
-        <div className="container mx-auto px-4">
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8 py-3">
-            <li><a href="#" className="text-gray-700 hover:text-blue-600 font-medium">New Arrivals</a></li>
-            <li><a href="#" className="text-gray-700 hover:text-blue-600 font-medium">Men</a></li>
-            <li><a href="#" className="text-gray-700 hover:text-blue-600 font-medium">Women</a></li>
-            <li><a href="#" className="text-gray-700 hover:text-blue-600 font-medium">Kids</a></li>
-            <li><a href="#" className="text-gray-700 hover:text-blue-600 font-medium">Accessories</a></li>
-            <li><a href="#" className="text-red-600 hover:text-red-700 font-medium">Sale</a></li>
-          </ul>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <ul className="md:hidden py-4 space-y-3">
-              <li><a href="#" className="block text-gray-700 hover:text-blue-600 font-medium py-2">New Arrivals</a></li>
-              <li><a href="#" className="block text-gray-700 hover:text-blue-600 font-medium py-2">Men</a></li>
-              <li><a href="#" className="block text-gray-700 hover:text-blue-600 font-medium py-2">Women</a></li>
-              <li><a href="#" className="block text-gray-700 hover:text-blue-600 font-medium py-2">Kids</a></li>
-              <li><a href="#" className="block text-gray-700 hover:text-blue-600 font-medium py-2">Accessories</a></li>
-              <li><a href="#" className="block text-red-600 hover:text-red-700 font-medium py-2">Sale</a></li>
-              <li className="border-t pt-3 mt-3">
-                <a href="#" className="block text-gray-700 hover:text-blue-600 py-2">My Account</a>
-              </li>
-              <li><a href="#" className="block text-gray-700 hover:text-blue-600 py-2">Wishlist</a></li>
-            </ul>
-          )}
-        </div>
-      </nav>
     </header>
   );
 }
