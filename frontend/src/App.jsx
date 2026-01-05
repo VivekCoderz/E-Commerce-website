@@ -1,17 +1,22 @@
-import React from 'react'
-import { useState } from 'react'
-import { Home } from 'lucide-react'
-import Signup from './components/auth/Signup'
+import React from "react";
+import Signin from "./components/auth/Signin";
+import Signup from "./components/auth/Signup";
+import HomePage from "./components/HomePage";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    <Signup/>
-    <Home/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/signin" element={<Signin/>}/>
+          <Route path="/home" element={<HomePage/>}/>
+          <Route path="/" element={<Navigate to="/signup"/> }/>
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

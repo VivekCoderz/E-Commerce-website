@@ -4,7 +4,7 @@ import HeroSection from "./others/HeroSection";
 import FeaturedProducts from "./others/FeaturedProducts";
 import Footer from "./others/Footer";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Header />
@@ -15,4 +15,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
