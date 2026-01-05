@@ -1,20 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
-import './App.css'
-import Header from './components/Home/Header'
-import HeroSection from './components/Home/HeroSection'
-import FeaturedProducts from './components/Home/FeaturedProducts'
-import Footer from './components/Home/Footer'
+import { Home } from 'lucide-react'
+import Signup from './components/auth/Signup'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <Header/>
-     <HeroSection/>
-    <FeaturedProducts/>
-    <Footer/>
+    <Signup/>
+    <Home/>
     </>
   )
 }
