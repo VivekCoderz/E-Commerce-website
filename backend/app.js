@@ -10,12 +10,15 @@ app.use(express.json())
 
 
 app.post('/user/auth/signup',async (req,res)=>{
+    
     const {fullName,email,password} = req.body;
+    console.log(req.body)
     
     try{
-        const isUnique = userModule.findOne({email})
+        const isUnique = await userModule.findOne({email})
         if(isUnique){
-            res.send("User already exist")
+            res.status(400).send("User already exist")
+            return ;
         }
         const newUser = new userModule({
             fullName,
@@ -24,6 +27,24 @@ app.post('/user/auth/signup',async (req,res)=>{
         })
         await newUser.save()
         res.status(201).send("User created Successfully")
+    }
+    catch(error){
+        res.status(500).send("Server Error")
+    }
+})
+
+app.post('/user/auth/signin',async (req,res)=>{
+
+    const {email,password} = req.body;
+    console.log(req.body)
+    try{
+        const userFound = await userModule.findOne({email})
+        if(!userFound){
+            res.status(400).send("Email is not registered");
+            return ;
+        }
+        if(password == userFound.password) return res.status(200).send("Sign in Successfully")
+        else return res.status(400).send("Password Incorrect")
     }
     catch(error){
         res.status(500).send("Server Error")
