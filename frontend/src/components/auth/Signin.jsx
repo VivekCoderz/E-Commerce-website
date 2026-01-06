@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Eye, EyeOff, Mail, Lock, LogIn, Loader2 } from "lucide-react";
 import axios from "axios";
 import {Link} from "react-router-dom"
-import { ToastContainer , toast} from "react-toastify";
+import { toast} from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
@@ -46,7 +46,6 @@ const Signin = () => {
     // Same Midnight Slate background for eye comfort
     <div className="min-h-screen bg-[#0f172a] flex items-center justify-center p-6 font-sans">
       <div className="w-full max-w-md bg-[#1e293b] border border-slate-700 rounded-2xl shadow-2xl p-8">
-        <ToastContainer/>
         {/* Header */}
         <div className="mb-8 text-center md:text-left">
           <h2 className="text-2xl font-bold text-slate-100">Welcome Back</h2>
@@ -150,7 +149,7 @@ const Signin = () => {
           <p className="text-slate-400 text-sm">
             Don't have an account?
             <button className="ml-2 font-bold text-blue-400 hover:text-blue-300 transition-colors uppercase text-xs tracking-wider">
-             <Link to="/signin">Create One</Link>
+             <Link to="/signup">Create One</Link>
             </button>
           </p>
         </div>
