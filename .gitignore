@@ -1,0 +1,6 @@
+
+# secrets and dependencies (never commit)
+.env
+.env.*
+!.env.example
+node_modules/
