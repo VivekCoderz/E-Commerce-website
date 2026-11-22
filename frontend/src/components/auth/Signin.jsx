@@ -5,6 +5,8 @@ import {Link} from "react-router-dom"
 import { toast} from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +22,7 @@ const Signin = () => {
         password
     }
     try {
-      await axios.post("http://localhost:3000/user/auth/signin", userdata);
+      await axios.post(`${API_URL}/user/auth/signin`, userdata);
       toast.success("Successfully Sign In!", {
         position: "top-right",
         autoClose: 3000,
@@ -30,8 +32,7 @@ const Signin = () => {
       });
       navigate("/home")
     } catch (error) {
-        console.log("rejre" ,error.response.data)
-      toast.error(error.response.data, {
+      toast.error(error.response?.data || "Sign in failed, please try again", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,

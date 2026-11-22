@@ -1,3 +1,36 @@
+# E-Commerce Website (MERN)
+
+## Current status
+
+What is implemented in this repo today:
+
+- **Backend** (`backend/app.js`, Express + Mongoose)
+  - `POST /user/auth/signup` – creates a user (`fullName`, `email`, `password`), passwords hashed with bcrypt
+  - `POST /user/auth/signin` – checks email and password
+- **Frontend** (`frontend/`, React 19 + Vite + Tailwind CSS + React Router)
+  - Sign up and sign in pages with toast notifications (react-toastify)
+  - Home page (`/home`) with header, hero slider, featured products (static sample data, category tabs) and footer
+
+Everything in the list further below is the **planned roadmap**, not yet built.
+
+## Run locally
+
+```bash
+# Backend – needs DBURL (MongoDB connection string) and optionally PORT in backend/.env
+cd backend
+npm install
+npm start            # http://localhost:3000 by default
+
+# Frontend
+cd frontend
+npm install
+npm run dev          # set VITE_API_URL in frontend/.env.local if the API is not on http://localhost:3000
+```
+
+---
+
+## Planned features (roadmap)
+
 📦 E-Commerce Website — Feature List
 
 This project is a full-featured modern E-Commerce Web Application built using the MERN Stack (MongoDB, Express, React, Node.js).
