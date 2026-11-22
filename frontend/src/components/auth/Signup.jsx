@@ -14,6 +14,8 @@ import {
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 const DarkProfessionalForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -31,7 +33,7 @@ const DarkProfessionalForm = () => {
     };
     setIsLoading(true);
     try {
-      await axios.post("http://localhost:3000/user/auth/signup", userdata);
+      await axios.post(`${API_URL}/user/auth/signup`, userdata);
       toast.success("Successfully Signed Up!", {
         position: "top-right",
         autoClose: 3000,
@@ -41,7 +43,7 @@ const DarkProfessionalForm = () => {
       });
       navigate("/signin")
     } catch (error) {
-      toast.error("Signup Failed!",{
+      toast.error(error.response?.data || "Signup Failed!",{
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
